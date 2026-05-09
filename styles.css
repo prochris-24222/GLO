@@ -1,0 +1,757 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-pink: #ff6b9d;
+    --secondary-pink: #ff8fa3;
+    --light-pink: #ffb7c5;
+    --dark-pink: #c44569;
+    --white: #ffffff;
+    --cream: #fff5f7;
+    --text-dark: #2d3436;
+    --text-light: #636e72;
+    --gradient-1: linear-gradient(135deg, #ff6b9d 0%, #ff8fa3 100%);
+    --gradient-2: linear-gradient(135deg, #ff8fa3 0%, #ffb7c5 100%);
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #fff5f7 0%, #ffeef2 50%, #fff5f7 100%);
+    color: var(--text-dark);
+    overflow-x: hidden;
+    line-height: 1.6;
+}
+
+/* Floating Hearts Background */
+.hearts-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+    overflow: hidden;
+}
+
+.floating-heart {
+    position: absolute;
+    font-size: 20px;
+    animation: float-up 15s infinite ease-in;
+    opacity: 0.6;
+    user-select: none;
+}
+
+@keyframes float-up {
+    0% {
+        transform: translateY(100vh) rotate(0deg);
+        opacity: 0;
+    }
+    10% {
+        opacity: 0.6;
+    }
+    90% {
+        opacity: 0.6;
+    }
+    100% {
+        transform: translateY(-100px) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* Navigation */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 1rem 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    box-shadow: 0 2px 20px rgba(255, 107, 157, 0.2);
+}
+
+.nav-brand {
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--primary-pink);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.heart-icon {
+    animation: heartbeat 1.5s infinite;
+}
+
+@keyframes heartbeat {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-dark);
+    font-weight: 500;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: var(--primary-pink);
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--gradient-1);
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+    width: 100%;
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background: var(--primary-pink);
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+/* Hero Section */
+.hero-section {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 100px 5% 50px;
+    position: relative;
+    z-index: 1;
+}
+
+.hero-content {
+    text-align: center;
+    max-width: 800px;
+}
+
+.photo-frame {
+    position: relative;
+    width: 280px;
+    height: 280px;
+    margin: 0 auto 2rem;
+    animation: fadeInUp 1s ease-out;
+}
+
+.photo-placeholder {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: var(--gradient-2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 3rem;
+    box-shadow: 0 10px 40px rgba(255, 107, 157, 0.3);
+    position: relative;
+    overflow: hidden;
+    border: 5px solid white;
+}
+
+.placeholder-text {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.placeholder-subtext {
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+.frame-decoration {
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+    border-radius: 50%;
+    border: 3px dashed var(--primary-pink);
+    animation: rotate 20s linear infinite;
+}
+
+@keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.main-title {
+    font-family: 'Great Vibes', cursive;
+    font-size: 4rem;
+    color: var(--dark-pink);
+    margin-bottom: 1rem;
+    animation: fadeInUp 1s ease-out 0.3s both;
+}
+
+.highlight {
+    color: var(--primary-pink);
+    position: relative;
+    display: inline-block;
+}
+
+.subtitle {
+    font-size: 1.3rem;
+    color: var(--text-light);
+    margin-bottom: 2rem;
+    animation: fadeInUp 1s ease-out 0.6s both;
+}
+
+.scroll-indicator {
+    margin-top: 3rem;
+    animation: bounce 2s infinite;
+}
+
+.scroll-indicator span {
+    display: block;
+    color: var(--primary-pink);
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+}
+
+.arrow {
+    width: 30px;
+    height: 30px;
+    border-right: 3px solid var(--primary-pink);
+    border-bottom: 3px solid var(--primary-pink);
+    transform: rotate(45deg);
+    margin: 0 auto;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+    40% { transform: translateY(-10px); }
+    60% { transform: translateY(-5px); }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Container */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 5%;
+}
+
+/* Section Titles */
+.section-title {
+    font-family: 'Great Vibes', cursive;
+    font-size: 3.5rem;
+    text-align: center;
+    color: var(--dark-pink);
+    margin-bottom: 1rem;
+}
+
+.section-subtitle {
+    text-align: center;
+    color: var(--text-light);
+    font-size: 1.2rem;
+    margin-bottom: 3rem;
+}
+
+/* Apology Section */
+.apology-section {
+    padding: 100px 0;
+    position: relative;
+    z-index: 1;
+}
+
+.apology-card {
+    background: white;
+    border-radius: 20px;
+    padding: 3rem;
+    box-shadow: 0 10px 40px rgba(255, 107, 157, 0.15);
+    max-width: 800px;
+    margin: 0 auto 2rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.apology-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: var(--gradient-1);
+}
+
+.broken-heart {
+    text-align: center;
+    font-size: 4rem;
+    margin-bottom: 1.5rem;
+    animation: heartbeat 1.5s infinite;
+}
+
+.apology-text {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--text-dark);
+    margin-bottom: 1.5rem;
+    text-align: justify;
+}
+
+.signature {
+    text-align: right;
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 2px dashed var(--light-pink);
+}
+
+.signature-name {
+    font-family: 'Dancing Script', cursive;
+    font-size: 2rem;
+    color: var(--primary-pink);
+    margin-top: 0.5rem;
+}
+
+.forgive-btn {
+    display: block;
+    margin: 2rem auto 0;
+    padding: 1rem 3rem;
+    font-size: 1.2rem;
+    background: var(--gradient-1);
+    color: white;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 20px rgba(255, 107, 157, 0.4);
+}
+
+.forgive-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 30px rgba(255, 107, 157, 0.6);
+}
+
+/* Reasons Section */
+.reasons-section {
+    padding: 100px 0;
+    background: linear-gradient(135deg, #fff 0%, #fff5f7 100%);
+    position: relative;
+    z-index: 1;
+}
+
+.reasons-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.reason-card {
+    background: white;
+    border-radius: 15px;
+    padding: 1.5rem;
+    box-shadow: 0 5px 20px rgba(255, 107, 157, 0.1);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.reason-card.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.reason-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(255, 107, 157, 0.2);
+}
+
+.reason-card::before {
+    content: '💕';
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 1.5rem;
+    opacity: 0.3;
+}
+
+.reason-number {
+    display: inline-block;
+    background: var(--gradient-1);
+    color: white;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 35px;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.reason-text {
+    color: var(--text-dark);
+    line-height: 1.6;
+}
+
+.load-more-btn {
+    display: block;
+    margin: 2rem auto;
+    padding: 1rem 2.5rem;
+    font-size: 1.1rem;
+    background: white;
+    color: var(--primary-pink);
+    border: 2px solid var(--primary-pink);
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.load-more-btn:hover {
+    background: var(--gradient-1);
+    color: white;
+}
+
+/* Love Letter Section */
+.love-letter-section {
+    padding: 100px 0;
+    position: relative;
+    z-index: 1;
+}
+
+.letter-container {
+    display: flex;
+    justify-content: center;
+    perspective: 1000px;
+}
+
+.envelope {
+    position: relative;
+    width: 100%;
+    max-width: 700px;
+}
+
+.letter {
+    background: white;
+    border-radius: 10px;
+    padding: 3rem;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.6s ease;
+}
+
+.letter:hover {
+    transform: rotateX(5deg);
+}
+
+.letter-content p {
+    margin-bottom: 1.5rem;
+    line-height: 1.8;
+    color: var(--text-dark);
+    font-size: 1.1rem;
+}
+
+.dear {
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.8rem;
+    color: var(--primary-pink);
+    margin-bottom: 2rem;
+}
+
+.closing {
+    margin-top: 2rem;
+    font-style: italic;
+}
+
+.signature-name-large {
+    font-family: 'Dancing Script', cursive;
+    font-size: 2.5rem;
+    color: var(--primary-pink);
+    margin-top: 0.5rem;
+}
+
+.heart-signature {
+    text-align: center;
+    font-size: 3rem;
+    margin-top: 1rem;
+    animation: heartbeat 1.5s infinite;
+}
+
+/* Memories Section */
+.memories-section {
+    padding: 100px 0;
+    background: linear-gradient(135deg, #fff5f7 0%, #fff 100%);
+    position: relative;
+    z-index: 1;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.gallery-item {
+    text-align: center;
+}
+
+.gallery-placeholder {
+    width: 100%;
+    height: 250px;
+    background: var(--gradient-2);
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    box-shadow: 0 5px 20px rgba(255, 107, 157, 0.3);
+    transition: all 0.3s ease;
+}
+
+.gallery-placeholder:hover {
+    transform: scale(1.05);
+}
+
+.gallery-item p {
+    color: var(--text-dark);
+    font-weight: 500;
+}
+
+/* Footer */
+.footer {
+    background: var(--gradient-1);
+    color: white;
+    padding: 3rem 0;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+.footer-content p {
+    margin-bottom: 0.5rem;
+}
+
+.footer-hearts {
+    font-size: 2rem;
+    margin: 1rem 0;
+    animation: heartbeat 1.5s infinite;
+}
+
+.copyright {
+    font-size: 0.9rem;
+    opacity: 0.9;
+    margin-top: 1rem;
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 2000;
+    justify-content: center;
+    align-items: center;
+    animation: fadeIn 0.3s ease;
+}
+
+.modal.show {
+    display: flex;
+}
+
+.modal-content {
+    background: white;
+    border-radius: 20px;
+    padding: 3rem;
+    text-align: center;
+    max-width: 500px;
+    width: 90%;
+    animation: slideIn 0.5s ease;
+    position: relative;
+}
+
+.modal-hearts {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    animation: heartbeat 1.5s infinite;
+}
+
+.modal-content h2 {
+    font-family: 'Great Vibes', cursive;
+    font-size: 2.5rem;
+    color: var(--primary-pink);
+    margin-bottom: 1rem;
+}
+
+.modal-content p {
+    color: var(--text-dark);
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+.close-modal {
+    margin-top: 1.5rem;
+    padding: 0.8rem 2rem;
+    background: var(--gradient-1);
+    color: white;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.close-modal:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 107, 157, 0.4);
+}
+
+.celebration-hearts {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+    border-radius: 20px;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: white;
+        flex-direction: column;
+        padding: 1rem 0;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    .main-title {
+        font-size: 2.5rem;
+    }
+
+    .section-title {
+        font-size: 2.5rem;
+    }
+
+    .photo-frame {
+        width: 200px;
+        height: 200px;
+    }
+
+    .apology-card {
+        padding: 2rem 1.5rem;
+    }
+
+    .reasons-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .letter {
+        padding: 2rem 1.5rem;
+    }
+}
+
+/* Additional Animations */
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+.pulse-animation {
+    animation: pulse 2s infinite;
+}
+
+/* Smooth Scroll */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Selection Color */
+::selection {
+    background: var(--primary-pink);
+    color: white;
+}
+
+::-moz-selection {
+    background: var(--primary-pink);
+    color: white;
+}

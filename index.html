@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For My Babe Glo 💕</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Poppins:wght@300;400;600&family=Great+Vibes&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Floating Hearts Background -->
+    <div class="hearts-container" id="heartsContainer"></div>
+    
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-brand">
+            <span class="heart-icon">💕</span>
+            <span>For My Babe</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#home" class="active">Home</a></li>
+            <li><a href="#apology">My Apology</a></li>
+            <li><a href="#reasons">28 Reasons</a></li>
+            <li><a href="#love-letter">Love Letter</a></li>
+        </ul>
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+
+    <!-- Home Section -->
+    <section id="home" class="hero-section">
+        <div class="hero-content">
+            <div class="photo-frame">
+                <div class="photo-placeholder">
+                    <span class="placeholder-text">📸 Your Beautiful Photo Here</span>
+                    <p class="placeholder-subtext">(Replace with Babe's photo)</p>
+                </div>
+                <div class="frame-decoration"></div>
+            </div>
+            <h1 class="main-title">To My Dearest <span class="highlight">Babe</span></h1>
+            <p class="subtitle">This page is dedicated to you, my love</p>
+            <div class="scroll-indicator">
+                <span>Scroll Down</span>
+                <div class="arrow"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Apology Section -->
+    <section id="apology" class="apology-section">
+        <div class="container">
+            <h2 class="section-title">I'm So Sorry, Babe</h2>
+            <div class="apology-card">
+                <div class="broken-heart">
+                    <span>💔</span>
+                </div>
+                <p class="apology-text">
+                    My dearest Babe,
+                </p>
+                <p class="apology-text">
+                    I know that what you saw in your dream hurt you deeply, and even though it was just a dream, 
+                    the pain it caused you is real, and for that, I am truly sorry. I never want to be the cause 
+                    of your tears or make you feel insecure about us.
+                </p>
+                <p class="apology-text">
+                    You are the only one for me, Glo. My heart beats only for you. I understand why it affected 
+                    you so much, and I want you to know that I would never do anything to betray your trust or 
+                    hurt our beautiful relationship.
+                </p>
+                <p class="apology-text">
+                    Please forgive me, my love. Let me spend every day proving to you that you are my everything.
+                </p>
+                <div class="signature">
+                    <p>With all my love,</p>
+                    <p class="signature-name">Leizer</p>
+                </div>
+            </div>
+            <button class="forgive-btn" onclick="showForgivenessModal()">
+                Click Here if You Forgive Me 💕
+            </button>
+        </div>
+    </section>
+
+    <!-- 28 Reasons Section -->
+    <section id="reasons" class="reasons-section">
+        <div class="container">
+            <h2 class="section-title">28 Reasons Why I'm Sorry</h2>
+            <p class="section-subtitle">Each reason comes from the depths of my heart</p>
+            
+            <div class="reasons-grid" id="reasonsGrid">
+                <!-- Reasons will be dynamically loaded -->
+            </div>
+            
+            <button class="load-more-btn" onclick="toggleAllReasons()">
+                Show All Reasons 💝
+            </button>
+        </div>
+    </section>
+
+    <!-- Love Letter Section -->
+    <section id="love-letter" class="love-letter-section">
+        <div class="container">
+            <h2 class="section-title">A Letter From My Heart</h2>
+            <div class="letter-container">
+                <div class="envelope">
+                    <div class="letter">
+                        <div class="letter-content">
+                            <p class="dear">My Dearest Babe Glo,</p>
+                            
+                            <p>As our birthday approaches, I find myself reflecting on how lucky I am to have you in my life. 
+                            You are my sunshine, my happiness, my everything.</p>
+                            
+                            <p>I know I made a mistake, and I carry the weight of knowing I caused you pain. 
+                            But please believe me when I say that you are the only person I see, the only person I want, 
+                            and the only person I love.</p>
+                            
+                            <p>Every moment without your smile feels incomplete. Every day I wake up thinking of you, 
+                            and every night I fall asleep dreaming of our future together.</p>
+                            
+                            <p>I promise to be better, to be more understanding, and to always make you feel secure 
+                            in our love. You deserve nothing less than the world, and I will spend every day trying 
+                            to give it to you.</p>
+                            
+                            <p>Happy early birthday, my love. May this year bring us closer than ever before.</p>
+                            
+                            <p class="closing">Forever and Always Yours,</p>
+                            <p class="signature-name-large">Leizer</p>
+                            
+                            <div class="heart-signature">💕</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery/Memories Section -->
+    <section id="memories" class="memories-section">
+        <div class="container">
+            <h2 class="section-title">Our Beautiful Journey</h2>
+            <p class="section-subtitle">Every moment with you is precious</p>
+            
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <div class="gallery-placeholder">
+                        <span>📷 Add Your Photo</span>
+                    </div>
+                    <p>Our First Date</p>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-placeholder">
+                        <span>📷 Add Your Photo</span>
+                    </div>
+                    <p>Special Moments</p>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-placeholder">
+                        <span>📷 Add Your Photo</span>
+                    </div>
+                    <p>Together Forever</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p>Made with all my love for <span class="highlight">Babe Glo</span></p>
+            <p>Forever Yours, <span class="highlight">Leizer</span></p>
+            <div class="footer-hearts">💕💕💕</div>
+            <p class="copyright">© 2024 - Our Love Story Continues...</p>
+        </div>
+    </footer>
+
+    <!-- Forgiveness Modal -->
+    <div class="modal" id="forgivenessModal">
+        <div class="modal-content">
+            <div class="modal-hearts">💖💖💖</div>
+            <h2>Thank You, My Love! 🎉</h2>
+            <p>Your forgiveness means the world to me!</p>
+            <p>I promise to make you happy every single day.</p>
+            <div class="celebration-hearts"></div>
+            <button class="close-modal" onclick="closeForgivenessModal()">Close 💕</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
